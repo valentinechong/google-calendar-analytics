@@ -5,7 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <script>
+            (() => {
+                const theme = localStorage.getItem('theme') ?? 'dark';
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+            })();
+        </script>
+
         <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

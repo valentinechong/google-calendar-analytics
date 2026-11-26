@@ -1,5 +1,5 @@
 
-name: wirejets
+name: google-calendar-analytics
 recipe: laravel
 
 config:
@@ -13,21 +13,9 @@ config:
 
 services:
   database:
-    portforward: ${DB_EXT_PORT:-54630}
+    portforward: 56789
 
   node:
     type: node:22
-    port: 5200
+    port: 5173
     command: tail -f /dev/null
-
-tooling:
-  npm:
-    service: node
-  node:
-    service: node
-  php:
-    service: appserver
-
-proxy:
-  node:
-    - wirejets.lndo.site:5200

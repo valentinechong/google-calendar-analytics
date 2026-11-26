@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'refresh_token' => env('GOOGLE_REFRESH_TOKEN'),
+        'calendar_id' => env('GOOGLE_CALENDAR_ID', 'primary'),
+        'redirect_uri' => env('GOOGLE_REDIRECT_URI'),
+    ],
+
 ];
